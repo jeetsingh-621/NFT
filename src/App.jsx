@@ -6,8 +6,12 @@ import Trending from './components/Trending'
 import Artist from './components/Artist'
 import Community from './components/Community'
 import Footer from './components/Footer'
+import LocomotiveScroll from 'locomotive-scroll';
+
 
 function App() {
+const locomotiveScroll = new LocomotiveScroll();
+
   
   return (
     <div className='w-full bg-dark-blue'>
