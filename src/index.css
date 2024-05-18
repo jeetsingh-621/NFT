@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: 'Poppins', sans-serif; */
+
+}
+.first-card{
+    /* background-color: rgba(184, 100, 184, 0.511); */
+    background-color: transparent;
+}
+.second-card{
+    background: linear-gradient(to left , rgb(181, 40, 181),rgba(154, 118, 154, 0.482),rgba(236, 172, 236, 0.642));
+    backdrop-filter: blur(100px);
+}
+/* .main-blur{
+    background:linear-gradient(#7E18B7,#6C16B0,#6C16B0,#5F16BD);
+    animation-name: blur;
+    animation-duration: 3s;
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1);
+    animation-iteration-count: infinite;
+} */
+/* @keyframes blur {
+    0%{
+    background:linear-gradient(#7E18B7,#6C16B0,#6C16B0,#5F16BD);
+    box-shadow: 0px 0px 10px white;
+        
+    }
+    50%{
+    background:linear-gradient(#7E18B7,#57118d,#6C16B0,#5F16BD);
+    box-shadow: 0px 0px 30px white;
+
+        
+    }
+    100%{
+    box-shadow: 0px 0px 50px white;
+
+    background:linear-gradient(#8f3fbd,#521b7d,#6C16B0,#5F16BD);
+        
+    }
+    
+} */
+.artist-scroll::-webkit-scrollbar{
+    display: none;
+}
