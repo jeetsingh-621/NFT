@@ -71,7 +71,7 @@ function Hero() {
                 y2="87.9031"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stop-color="#DD24E1" />
+                <stop stopColor="#DD24E1" />
                 <stop offset="1" stop-color="#5117F4" />
               </linearGradient>
             </defs>

@@ -13,6 +13,12 @@ function Navbar() {
       stagger:0.2,
       ease:"power3.out"
     })
+    gsap.from(".navicon",{
+      y:-20,
+      opacity:0,
+      duration:0.89,
+    })
+    
     
   })
   
@@ -41,14 +47,14 @@ function Navbar() {
         <img className='md:w-10 w-7  object-cover' src={union} alt="" />
         <div className='hidden menu xl:w-[45%]  lg:w-[50%] md:w-[70%]  md:flex justify-between  font-light items-center'>
           {['About us','Store','Games'].map((item,index)=>{
-            return <div className='h1  w-[15%] '> <h1 className=' cursor-pointer hover:scale-110 text-center duration-300 hover:font-medium' key={index}>{item}</h1> </div>
+            return <div key={index} className='h1  w-[15%] '> <h1 className=' cursor-pointer hover:scale-110 text-center duration-300 hover:font-medium' key={index}>{item}</h1> </div>
           })}
            <div className='btn-div'>
             <button className='hover:bg-light-purple hover:text-white duration-300   font-semibold  px-6 py-2 bg-white text-black'>Connect Wallet</button>
             </div>
         </div>
 
-        <div onClick={togglenavbar} className=" sm:hidden z-[2000] ">
+        <div onClick={togglenavbar} className=" navicon sm:hidden z-[2000] ">
         <div
           className={`flex  flex-col w-full cursor-pointer z-[300] ${wallet
             ? "gap-0   justify-between h-6 w-6 ms-1"
