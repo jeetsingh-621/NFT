@@ -5,9 +5,32 @@ import art1 from '../../public/images/png/art1.png';
 import art2 from '../../public/images/png/art2.png';
 import art3 from '../../public/images/png/art3.png';
 import art4 from '../../public/images/png/art4.png';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
 
 
 function Artist() {
+    useGSAP(()=>{
+        gsap.from(".pr",{
+            y:20,
+            duration:0.8,
+            // stagger:0.2,
+            opacity:0,
+            scrollTrigger:{
+                trigger:".pr",
+                // markers:true,
+                start:"top 80%",
+                // scrub:true,
+            }
+        })
+        gsap.from(".marquee",{
+            y:100,
+            opacity:0,
+            duration:1,
+            stagger:0.2,
+            scrollTrigger:".marquee",
+        })
+    })
 
     const initialartist = [{
         img:art1,
@@ -19,7 +42,7 @@ function Artist() {
     },
     {
         img:art3,
-        name:"Javier Miranda"
+        name:"Javier"
     },
     {
         img:art4,
@@ -36,7 +59,7 @@ function Artist() {
     },
     {
         img:art3,
-        name:"Javier Miranda"
+        name:"Javier"
     },
     {
         img:art4,
@@ -53,7 +76,7 @@ function Artist() {
     },
     {
         img:art3,
-        name:"Javier Miranda"
+        name:"Javier"
     },
     {
         img:art4,
@@ -66,16 +89,18 @@ function Artist() {
   return (
     <div className='w-full px-4  md:px-10 py-4 md:py-10'>
         <div className='flex pt-10 md:pt-0 justify-between '>
-            <h1 className=' text-xl md:text-5xl font-semibold'>Popular Artists</h1>
+            <h1 className='pr text-xl md:text-5xl font-semibold'>Popular Artists</h1>
+            <div className='pr'>
             <div className="btn  flex  bg-white px-2 md:px-6 rounded-md py-2 hover:bg-light-purple hover:text-white text-xs md:text-md duration-300 text-black font-semibold  items-center gap-0 w-fit">
                         <button className=''>View all Artists</button>
                         <FaArrowRightLong className='-rotate-45'/>
 
                     </div>
+                    </div>
         </div>
         <div className='w-full artist-scroll flex flex-shrink-0 overflow-x-auto items-center gap-6 md:gap-20 py-14 md:py-24'>
             {initialartist.map((item,index)=>{
-                return    <div key={index} className='w-full  flex flex-col items-center justify-center'>
+                return    <div key={index} className='marquee w-full  flex flex-col items-center justify-center'>
                 <div className= 'w-24 md:w-36 md:h-36 h-24 rounded-full overflow-hidden'>
                 <img className='w-full object-cover' src={item.img} alt="" />
                 </div>

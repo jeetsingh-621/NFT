@@ -1,18 +1,49 @@
 import React from 'react'
 import cta from "../../public/images/png/cta.png"
+import { useGSAP } from '@gsap/react'
+import gsap from 'gsap'
 
 function Community() {
+  useGSAP(()=>{
+    gsap.from(".img-4",{
+      scale:0,
+      duration:1,
+      ease:"power3.out",
+      stagger:0.2,
+      // rotate:50,
+      scrollTrigger:{
+        trigger:".img-4",
+        // markers:true,
+        start:"top 50%",
+        // scrub:true,
+      }
+
+    })
+    gsap.from(".join,.svg-div2",{
+      y:30,
+      duration:1,
+      opacity:0,
+      stagger:0.3,
+      ease:"power3.out",
+      scrollTrigger:{
+        trigger:".join",
+        // markers:true,
+        start:"top 50%",
+        // scrub:true,
+      }
+    })
+  })
   return (
     <div className='w-full px-4 py-4 relative md:px-10 md:py-10 pb-10 md:pb-20 lg:pb-28'>
         <span className='xl:w-[30rem] w-[20rem] h-[20rem] xl:h-[30rem] inline-block absolute top-10 md:top-[30%] left-[10%] blur-[100px] bg-light-purple'></span>
         <div className='w-full  flex flex-col md:flex-row items-center '>
 
-            <div className='md:basis-1/2 w-full z-10 xl:px-20 '>
+            <div className='img-4 md:basis-1/2 w-full z-10 xl:px-20 '>
                 <img className='xl:w-[30rem] w-[20rem]  mx-auto md:h-[20rem] xl:h-[30rem]' src={cta} alt="" />
             </div>
-            <div className='basis-1/2 mt-14 md:mt-0 md:px-10  xl:px-20'>
-                <h2 className='text-2xl lg:text-4xl xl:text-5xl tracking-wide font-semibold'>Join the community and get the best NFT collection</h2>
-                <div className="svg-div mt-10 ">
+            <div className='basis-1/2 overflow-hidden mt-14 md:mt-0 md:px-10  xl:px-20'>
+                <h2 className='text-2xl join lg:text-4xl xl:text-5xl tracking-wide font-semibold'>Join the community and get the best NFT collection</h2>
+                <div className="svg-div2 mt-10 ">
           <svg className="w-[150px] md:w-[180px]  cursor-pointer mx-auto md:mx-0"
             width="300"
             height="45"

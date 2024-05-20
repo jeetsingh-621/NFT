@@ -31,18 +31,18 @@ function Trending() {
 
         })
         gsap.from(".cards",{
-            // y:200,
+            // x:200,
             scale:0,
             opacity:0,
-            duration:2,
-            stagger:0.2,
+            duration:1,
+            stagger:0.3,
             // rotate:-180,
             ease:"expoScale(0.5,7,none)",
             scrollTrigger:{
                 trigger:".cards",
-                start:"top 50%",
+                start:"top 80%",
                 // end:"bottom 10%",
-                scrub:true,
+                // scrub:true,
                 // markers:true,
                 // yoyo:true,
             
@@ -60,7 +60,7 @@ function Trending() {
                 start:"top 70%",
                 // end:"bottom 10%",
                 // scrub:true,
-                markers:true,
+                // markers:true,
                 // yoyo:true,
             }
         })
@@ -109,7 +109,7 @@ function Trending() {
 
         <div className='photos flex xl:gap-10 gap-10 md:gap-5 justify-evenly flex-wrap'>
             {data.map((item,index)=>{
-                return  <div key={index} className={` cards z-[2] duration-300 xl:my-10 md:my-5 card max-w-[300px] xl:max-w-[450px] w-full py-4`}>
+                return  <div className='cards'> <div key={index} className={` z-[2] duration-300 xl:my-10 md:my-5 card max-w-[300px] xl:max-w-[450px] w-full py-4`}>
                 <div className='flex w-full justify-between my-2'>
                     <div className=''>
                         <h1 className='text-lg'>{item.name}</h1>
@@ -126,7 +126,7 @@ function Trending() {
 
                 </div>
 
-
+                </div>
             </div>
             })}
 

@@ -14,12 +14,12 @@ function Bitcoin() {
             scale:0,
             opacity:0,
             duration:1,
-            rotate:50,
+            // rotate:50,
             scrollTrigger:{
                 trigger:".img1",
 
                 // markers:true,
-                start:"top 60%",
+                start:"top 80%",
                 scrub:true,
 
             }
@@ -58,7 +58,7 @@ function Bitcoin() {
                 trigger:".img1",
 
                 // markers:true,
-                start:"top 65%",
+                start:"top 85%",
                 // scrub:true,
             }
 
