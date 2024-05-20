@@ -6,9 +6,66 @@ import rectangle4 from '../../public/images/png/Rectangle4.png'
 import rectangle5 from '../../public/images/png/Rectangle5.png'
 import rectangle6 from '../../public/images/png/Rectangle6.png'
 import { FaArrowRightLong } from "react-icons/fa6";
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
 
 
 function Trending() {
+    useGSAP(()=>{
+        gsap.from(".trending h2 ,.trending p",{
+            // scale:0,
+            stagger:0.2,
+            ease:"power3.out",
+            y:-20,
+            opacity:0,
+            duration:1,
+            // rotate:-1080,
+            scrollTrigger:{
+                trigger:".trending",
+
+                // markers:true,
+                start:"top 50%",
+                // scrub:true,
+
+            }
+
+        })
+        gsap.from(".cards",{
+            // y:200,
+            scale:0,
+            opacity:0,
+            duration:2,
+            // stagger:0.2,
+            // rotate:-180,
+            ease:"expoScale(0.5,7,none)",
+            scrollTrigger:{
+                trigger:".cards",
+                start:"top 100%",
+                // end:"bottom 10%",
+                scrub:true,
+                markers:true,
+                // yoyo:true,
+            
+
+            }
+        })
+        gsap.from(".btn-4",{
+            y:40,
+            opacity:0,
+            duration:1,
+            // stagger:0.2,
+            ease:"power3.out",
+            scrollTrigger:{
+                trigger:".btn-4",
+                start:"top 70%",
+                // end:"bottom 10%",
+                // scrub:true,
+                markers:true,
+                // yoyo:true,
+            }
+        })
+        
+    })
     const data  = [{
         name: 'Sebastian',
         name2:'Golden Flower',
@@ -43,7 +100,7 @@ function Trending() {
     }]
   return (
     <div className='w-full relative px-4 py-4 mt-20 md:mt-0 md:px-10 md:py-10'>
-        <div className='w-full'>
+        <div className='w-full trending'>
         <h2 className='text-5xl font-semibold'>Trending This Week</h2>
         <p className='my-4  text-sm w-full md:w-[29%] text-gray-300'>Lorem ipsum dolor sit amet, consectetur dolore adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         </div>
@@ -52,7 +109,7 @@ function Trending() {
 
         <div className='photos flex xl:gap-10 gap-10 md:gap-5 justify-evenly flex-wrap'>
             {data.map((item,index)=>{
-                return  <div key={index} className={`$ z-[2] duration-300 xl:my-10 md:my-5 card max-w-[300px] xl:max-w-[450px] w-full py-4`}>
+                return  <div key={index} className={` cards z-[2] duration-300 xl:my-10 md:my-5 card max-w-[300px] xl:max-w-[450px] w-full py-4`}>
                 <div className='flex w-full justify-between my-2'>
                     <div className=''>
                         <h1 className='text-lg'>{item.name}</h1>
@@ -74,7 +131,7 @@ function Trending() {
             })}
 
             <div className='w-full mt-10 md:mt-24  flex justify-center'>
-                    <div className='px-5  rounded-sm py-2 cursor-pointer flex gap-2 items-center justify-center bg-white text-black font-semibold hover:bg-purple hover:text-white duration-300   w-fit'>
+                    <div className='px-5 btn-4  rounded-sm py-2 cursor-pointer flex gap-2 items-center justify-center bg-white text-black font-semibold hover:bg-purple hover:text-white duration-300   w-fit'>
                         <button>Explore More</button>
                         <FaArrowRightLong className='-rotate-45'/>
 

@@ -7,10 +7,13 @@ import Artist from './components/Artist'
 import Community from './components/Community'
 import Footer from './components/Footer'
 import LocomotiveScroll from 'locomotive-scroll';
+import { useGSAP } from '@gsap/react'
+import gsap from 'gsap'
 
 
 function App() {
 const locomotiveScroll = new LocomotiveScroll();
+
 
   
   return (

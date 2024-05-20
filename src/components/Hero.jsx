@@ -4,19 +4,49 @@ import img1 from "../../public/images/png/img1.png";
 import ellipse4 from '../../public/images/png/Ellipse4.png';
 import eth from '../../public/images/png/ethereum.png';
 import ellipse from '../../public/images/png/Ellipse.png';
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+
 
 function Hero() {
+  useGSAP(()=>{
+    gsap.from(".heading,.para,.svg-div,.record",{
+      x:-300,
+      opacity:0,
+      duration: 1,
+      delay:1,
+      stagger:0.2,
+      ease:"power3.out",
+    })
+    gsap.from(".first-card,.second-card",{
+      x:300,
+      scale:0,
+      opacity:0,
+      duration: 1,
+      delay:1,
+      stagger:0.2,
+      ease:"power3  ",
+    })
+    gsap.from(".span-blur",{
+      // x:300,
+      scale:0,
+      opacity:0,
+      duration: 1,
+    //  yoyo:true,
+    // rotate:-500,
+    })
+  })
   return (
     <div className="flex mt-20 flex-col lg:flex-row  w-full px-4 py-6 md:px-10 md:py-20">
       <div className="basis-1/2 ">
         {["Discover Rare", "Collections", "Art $ NFT's"].map((item, index) => {
           return (
-            <h1 key={index} className="text-[2.5rem] md:text-[5rem] lg:text-[3.8rem] leading-none font-semibold">
+            <h1 key={index} className="heading text-[2.5rem] md:text-[5rem] lg:text-[3.8rem] leading-none font-semibold">
               {item}
             </h1>
           );
         })}
-        <p className='font-["poppins"] text-sm md:text-md my-5 md:my-10'>
+        <p className=' para font-["poppins"] text-sm md:text-md my-5 md:my-10'>
           Create, Explore, & Collect Digital Art NFTs
         </p>
 
@@ -60,7 +90,7 @@ function Hero() {
           </svg>
         </div>
 
-        <div className="flex justify-between w-full px-2 md:px-32 lg:px-0 lg:w-[50%] my-4 md:my-10">
+        <div className="flex record justify-between w-full px-2 md:px-32 lg:px-0 lg:w-[50%] my-4 md:my-10">
           <div>
             <h2 className="text-2xl font-semibold">32k+</h2>
             <h2 className="text-sm">Artwork</h2>
@@ -79,7 +109,7 @@ function Hero() {
 
 
       <div className=" basis-1/2 md:mt-20 lg:mt-0 relative px-4 py-0 ">
-        <span className="main-blur w-[90%] md:w-full lg:w-[70%] xl:ml-32 hidden  mx-auto h-[30rem] bg-purple md:inline-block rounded-full blur-[100px]"></span>
+        <span className="span-blur main-blur w-[90%] md:w-full lg:w-[70%] xl:ml-32 hidden  mx-auto h-[30rem] bg-purple md:inline-block rounded-full blur-[100px]"></span>
         <div className="w-full  top-0 left-0 md:-left-10 ">
           <div className="first-card  mb-10  md:mb-0 border-[0.5px] border-gray-400  bg-gray-400  md:absolute  md:top-0 md:right-20 z-[2] backdrop-blur-[40px] w-full max-w-[300px] mx-auto h-full lg:max-w-[300px] ">
             <img className="w-full object-cover" src={img} alt="" />

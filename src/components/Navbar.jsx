@@ -1,7 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import union from '../../public/images/png/Union.png';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
 
 function Navbar() {
+  useGSAP(()=>{
+     var tl=gsap.timeline()
+    gsap.from(" .nav img,.menu .h1, .btn-div",{
+      y:-50,
+      opacity:0,
+      duration:1,
+      stagger:0.2,
+      ease:"power3.out"
+    })
+    
+  })
+  
   
   const [wallet, setWallet] = useState(false);
   const togglenavbar = ()=>{
@@ -23,15 +37,15 @@ function Navbar() {
 
   return (
     <div className='max-w-[1440px] fixed z-[999]  mx-auto w-full'>
-    <div className=' w-full  bg-dark-blue px-4 py-6 lg:px-10 lg:py-6 flex justify-between items-center font-semibold '>
+    <div className=' nav w-full  bg-dark-blue px-4 py-6 lg:px-10 lg:py-6 flex justify-between items-center font-semibold '>
         <img className='md:w-10 w-7  object-cover' src={union} alt="" />
-        <div className='hidden  xl:w-[45%]  lg:w-[50%] md:w-[70%]  md:flex justify-between  font-light items-center'>
+        <div className='hidden menu xl:w-[45%]  lg:w-[50%] md:w-[70%]  md:flex justify-between  font-light items-center'>
           {['About us','Store','Games'].map((item,index)=>{
-            return <h1 className=' cursor-pointer hover:scale-110 w-[15%] text-center duration-300 hover:font-medium' key={index}>{item}</h1>
+            return <div className='h1  w-[15%] '> <h1 className=' cursor-pointer hover:scale-110 text-center duration-300 hover:font-medium' key={index}>{item}</h1> </div>
           })}
-           
+           <div className='btn-div'>
             <button className='hover:bg-light-purple hover:text-white duration-300   font-semibold  px-6 py-2 bg-white text-black'>Connect Wallet</button>
-
+            </div>
         </div>
 
         <div onClick={togglenavbar} className=" sm:hidden z-[2000] ">
