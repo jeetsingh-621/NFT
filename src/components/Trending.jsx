@@ -16,7 +16,7 @@ function Trending() {
             // scale:0,
             stagger:0.2,
             ease:"power3.out",
-            y:-20,
+            y:40,
             opacity:0,
             duration:1,
             // rotate:-1080,
@@ -43,7 +43,7 @@ function Trending() {
                 start:"top 100%",
                 // end:"bottom 10%",
                 scrub:true,
-                markers:true,
+                // markers:true,
                 // yoyo:true,
             
 

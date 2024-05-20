@@ -19,7 +19,7 @@ function Bitcoin() {
                 trigger:".img1",
 
                 // markers:true,
-                start:"top 80%",
+                start:"top 60%",
                 scrub:true,
 
             }
@@ -58,8 +58,8 @@ function Bitcoin() {
                 trigger:".img1",
 
                 // markers:true,
-                start:"top 115%",
-                scrub:true,
+                start:"top 65%",
+                // scrub:true,
             }
 
 
