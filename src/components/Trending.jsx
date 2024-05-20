@@ -21,7 +21,7 @@ function Trending() {
             duration:1,
             // rotate:-1080,
             scrollTrigger:{
-                trigger:".trending",
+                trigger:".trending h2 ,.trending p",
 
                 // markers:true,
                 start:"top 50%",
@@ -35,12 +35,12 @@ function Trending() {
             scale:0,
             opacity:0,
             duration:2,
-            // stagger:0.2,
+            stagger:0.2,
             // rotate:-180,
             ease:"expoScale(0.5,7,none)",
             scrollTrigger:{
                 trigger:".cards",
-                start:"top 100%",
+                start:"top 50%",
                 // end:"bottom 10%",
                 scrub:true,
                 // markers:true,
